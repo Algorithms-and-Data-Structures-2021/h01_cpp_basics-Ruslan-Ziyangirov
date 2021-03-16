@@ -25,11 +25,11 @@ Book::Book(const std::string &title,
 
   // Tip 1: остались слезы на щеках, осталось лишь инициализировать поля ...
 
-  title_ = title;
-  content_ = content;
-  genre_ = genre;
-  publisher_ = publisher;
-  authors_ = authors;
+    this -> title_ = title;
+    this -> content_ = content;
+    this -> genre_ = genre;
+    this -> publisher_ = publisher;
+    this -> authors_ = authors;
 
 }
 
@@ -39,7 +39,7 @@ bool Book::AddAuthor(const Author &author) {
   // Tip 1: для поиска дубликатов можно использовать цикл for-each
 
   for(Author author1: authors_){
-      if (author == author1){
+      if (author1 == author){
           return false;
       }else{
           authors_.push_back(author);

@@ -21,7 +21,9 @@ ResizeStorageStatus resize_storage(Book *&storage, int size, int new_capacity) {
   }
 
 
-  Book* storage_new = new Book [new_capacity];
+  Book* storage_new = storage;
+
+  storage = new Book[new_capacity];
 
   std::copy(storage_new, storage_new+size,storage);
   delete[] storage_new;
