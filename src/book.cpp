@@ -8,7 +8,6 @@ Book::Book(const std::string &title,
            Genre genre,
            Publisher publisher,
            const std::vector<Author> &authors) {
-
   // валидация аргументов
   if (title.empty()) {
     throw std::invalid_argument("Book::title cannot be empty");
