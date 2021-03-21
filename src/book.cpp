@@ -8,7 +8,6 @@ Book::Book(const std::string &title,
            Genre genre,
            Publisher publisher,
            const std::vector<Author> &authors) {
-
   // валидация аргументов
   if (title.empty()) {
     throw std::invalid_argument("Book::title cannot be empty");
@@ -24,12 +23,29 @@ Book::Book(const std::string &title,
   }
 
   // Tip 1: остались слезы на щеках, осталось лишь инициализировать поля ...
+
+    this -> title_ = title;
+    this -> content_ = content;
+    this -> genre_ = genre;
+    this -> publisher_ = publisher;
+    this -> authors_ = authors;
+
 }
 
 // 2. реализуйте метод ...
 bool Book::AddAuthor(const Author &author) {
   // здесь мог бы быть ваш сногсшибающий код ...
   // Tip 1: для поиска дубликатов можно использовать цикл for-each
+
+  for(Author author1: authors_){
+      if (author1 == author){
+          return false;
+      }else{
+          authors_.push_back(author);
+          return true;
+      }
+
+  }
   return false;
 }
 
